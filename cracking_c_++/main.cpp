@@ -5,9 +5,12 @@
  *      Author: MinhNH13
  */
 #include <iostream>
+#include <string>
 
 int main(int argc, char **argv)
 {
+	std::string input;
+	getline(input, 256);
 	return 0;
 }
 
