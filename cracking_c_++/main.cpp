@@ -7,10 +7,27 @@
 #include <iostream>
 #include <string>
 
+void sort_string(std::string &str)
+{
+  int len = str.length();
+  for (int i = 0; i < len-1; ++i)
+    for (int j = i+1; j < len; ++j)
+    {
+      if (str[i] > str[j])
+      {
+        char temp = str[i];
+        str[i] = str[j];
+        str[j] = temp;
+      }
+    }
+}
+
 bool is_anagrams(std::string str1, std::string str2)
 {
-    std::sort(str1.begin(), str1.end());
-    std::sort(str2.begin(), str2.end());
+    //std::sort(str1.begin(), str1.end());
+    //std::sort(str2.begin(), str2.end());
+    sort_string(str1);
+    sort_string(str2);
     if (str1.compare(str2) == 0)
     {
         return true;
